@@ -68,9 +68,7 @@ class Traverser(grok.Traverser):
     grok.context(Herd)
 
     def traverse(self, name):
-        if name == 'special':
-            return Special()
-        return None
+        return Special() if name == 'special' else None
 
 
 class Mammoth(grok.Model):

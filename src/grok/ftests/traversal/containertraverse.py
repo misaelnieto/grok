@@ -63,9 +63,7 @@ import grok
 class Herd(grok.Container):
 
     def traverse(self, name):
-        if name == 'special':
-            return Special()
-        return None
+        return Special() if name == 'special' else None
 
 
 class HerdIndex(grok.View):

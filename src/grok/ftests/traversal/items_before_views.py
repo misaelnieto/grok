@@ -66,4 +66,4 @@ class MammothIndex(grok.View):
     grok.name('index')
 
     def render(self):
-        return "Hello " + self.context.name.title()
+        return f"Hello {self.context.name.title()}"

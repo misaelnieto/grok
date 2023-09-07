@@ -143,13 +143,13 @@ class IGrokAPI(
 class IGrokView(grokcore.view.interfaces.IGrokView):
     """Grok views all provide this interface."""
 
-    def application_url(name=None):
+    def application_url(self):
         """Return the URL of the closest application object in the
         hierarchy or the URL of a named object (``name`` parameter)
         relative to the closest application object.
         """
 
-    def flash(message, type='message'):
+    def flash(self, type='message'):
         """Send a short message to the user."""
 
 
