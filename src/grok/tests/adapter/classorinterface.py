@@ -45,7 +45,9 @@ def module_context():
 
 
 def instance_context():
-    obj = object()
+
 
     class InstanceContext:
+        obj = object()
+
         grok.context(obj)

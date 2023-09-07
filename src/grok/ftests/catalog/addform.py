@@ -66,8 +66,7 @@ class Index(grok.View):
     grok.context(Mammoth)
 
     def render(self):
-        return 'Hi, my name is {}, and I\'m "{}"'.format(
-            self.context.name, self.context.size)
+        return f"""Hi, my name is {self.context.name}, and I\'m "{self.context.size}\""""
 
 
 class Search(grok.View):
@@ -77,9 +76,7 @@ class Search(grok.View):
         catalog = component.getUtility(ICatalog)
         query = ('Ellie the Mammoth', 'Ellie the Mammoth')
         results = catalog.searchResults(name=query)
-        if len(list(results)) == 1:
-            return 'We found Ellie!'
-        return "Couldn't find Ellie."
+        return 'We found Ellie!' if len(list(results)) == 1 else "Couldn't find Ellie."
 
 
 class AddMammoth(grok.AddForm):

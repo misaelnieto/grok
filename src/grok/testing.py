@@ -67,13 +67,9 @@ def warn(message, category=None, stacklevel=1):
 
     file = open(path)
     lineno = frame.f_lineno
-    for i in range(lineno):
+    for _ in range(lineno):
         line = file.readline()
 
-    print("{}:{}: {}: {}\n  {}".format(
-        path,
-        frame.f_lineno,
-        category.__name__,
-        message,
-        line.strip(),
-        ))
+    print(
+        f"{path}:{frame.f_lineno}: {category.__name__}: {message}\n  {line.strip()}"
+    )
